@@ -22,6 +22,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test, :production do
+  gem 'capistrano'
+end
+
 
 gem 'therubyracer'
 
