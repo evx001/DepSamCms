@@ -1,3 +1,45 @@
+###### INSTRUCTIONS ########## 
+### Requirements: This requires an LxAdmin VPS configured to use Apache and Passenger
+
+### First Run ###
+# 1. Setup your application under version control using either Git or Subversion
+# 2. Install any gems your application needs on your VPS as the root user using the gem install command
+# 3. On your local machine change to your application directory and run "capify ."
+# 4. Place this deploy.rb in your /config directory
+# 5. Edit all of the variables below
+# 6. Run: "cap deploy:setup" , this will setup the capistrano directory structure
+# 7. Run: "cap setup_domain" , this will add your domain and a database to LxAdmin.
+#   This will also configure apache and setup a database.yml for you in your applications
+#    /shared folder on the server
+# 8. Run "cap deploy:cold", this will deploy your application on to the server and run your database migration.
+
+### Deploy a new revision ###
+# 1. Run "cap deploy"
+
+##############################
+# The following variables will need to be changed:
+
+# The ip address of your VPS
+set :ip_address, "69.25.136.239"
+
+# Your repository type
+set :scm, :git
+
+# The name of your application, this will also be the folder were your application
+# will be deployed to
+set :application, "yourapplicationname" 
+
+# the url for your repository, This is displayed in the source repo control panel after clicking on your project
+set :repository,  "git@myproject.sourcerepo.com:myproject/testproject.git "
+
+# The domain(without the www) or subdomain you would like to deploy this application to
+set :domain_name , "yourdomain.com"
+
+# Your desired database name, you will be prompted to enter in your desired password.
+set :database_name , "myappdb" # !NOTE! this is limited to 9 characters
+
+###### There is no need to edit anything below this line ######
+################ leave asis ####################
 set :user , "root"
 set :domain_password, Proc.new {CLI.password_prompt "desired domain password: "}
 set :database_password, Proc.new {CLI.password_prompt "desired database password: "}
