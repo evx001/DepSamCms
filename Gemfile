@@ -26,6 +26,7 @@ group :development, :test, :production do
   gem 'capistrano'
 end
 
+gem 'passenger'
 
 gem 'therubyracer'
 
