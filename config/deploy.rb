@@ -27,16 +27,16 @@ set :scm, :git
 
 # The name of your application, this will also be the folder were your application
 # will be deployed to
-set :application, "yourapplicationname" 
+set :application, "DepSamCms" 
 
 # the url for your repository, This is displayed in the source repo control panel after clicking on your project
-set :repository,  "git@myproject.sourcerepo.com:myproject/testproject.git "
+set :repository,  "git@github.com:evx001/DepSamCms.git"
 
 # The domain(without the www) or subdomain you would like to deploy this application to
-set :domain_name , "yourdomain.com"
+set :domain_name , "samantha-cook.com"
 
 # Your desired database name, you will be prompted to enter in your desired password.
-set :database_name , "myappdb" # !NOTE! this is limited to 9 characters
+set :database_name , "samDB" # !NOTE! this is limited to 9 characters
 
 ###### There is no need to edit anything below this line ######
 ################ leave asis ####################
